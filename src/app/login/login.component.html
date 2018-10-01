@@ -1,0 +1,28 @@
+
+<div class="alert alert-danger" *ngIf="message.length > 0">
+  {{message}}
+</div>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="row ex1">
+      
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <h2>Login user</h2>
+        <p *ngIf="resultMsg">Registeration is successful & Please login here!</p>
+        <p *ngIf="loginErrorMsg"> Please Provide Valid Credentials</p>
+      <div class="form-group">
+        <label for="username">User Name</label>
+        <input type="text" id="username" class="form-control" formControlName="username">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="text" id="password" class="form-control" formControlName="password">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">login</button>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</form>

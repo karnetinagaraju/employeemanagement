@@ -1,0 +1,47 @@
+<div class="container">
+    <h2>All Employees</h2>
+    <div class="row">
+     <div class="col-md-10">
+        <table class="table">
+            <thead>
+              <tr>
+                 <th>empId</th> 
+                <th>name</th>
+                <th>username</th>
+                <th>address</th>
+                <th>email</th>
+                <th>mobile</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let employee of employees">
+                <td>{{employee.employee_id}}</td>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.username }}</td>
+                <td>{{ employee.address }}</td>
+                <td>{{ employee.email }}</td>
+                <td>{{ employee.mobile }}</td>
+                <td><a [routerLink]="['../editEmployee' , employee.employee_id]">
+                  <span class="glyphicon glyphicon-pencil"></span>
+                </a></td>
+                <td>
+                    <span class="glyphicon glyphicon-trash" (click)="onDelete(employee.employee_id)"></span>
+                  </td>
+              </tr>
+              </tbody>
+          </table>
+          <br/>
+          <a [routerLink]="['/employee']" class="btn btn-primary">back</a>
+          <br/><br/><br/>
+     </div>
+    
+   
+     
+  </div>
+</div>
+  
+
+
+
